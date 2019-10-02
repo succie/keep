@@ -1,13 +1,12 @@
 import React from 'react';
 import { render } from 'react-dom';
-import Typography from '@material-ui/core/Typography';
+import { Provider } from 'react-redux';
+import { store } from './store';
+import AppContainer from './containers/AppContainer/AppContainer';
 
-const App = () => {
-  return (
-    <div className="App">
-      <Typography variant="h1">Keep</Typography>
-    </div>
-  );
-};
-
-render(<App />, document.querySelector('#root'));
+render(
+  <Provider store={store}>
+    <AppContainer />
+  </Provider>,
+  document.querySelector('#root')
+);
